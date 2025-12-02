@@ -4,11 +4,11 @@
 
 # Core LangChain Framework
 langchain==0.3.26
-langchain-core==0.3.26
+langchain-core>=0.3.66
 langchain-community==0.3.26
 
 # LLM Integration
-langchain-google-genai==2.0.8
+langchain-google-genai>=2.0.8
 langchain-openai==0.3.24
 
 # Vector Database
