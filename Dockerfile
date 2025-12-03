@@ -1,9 +1,24 @@
 FROM python:3.10-slim-buster
 
+# Set working directory
 WORKDIR /app
 
-COPY . /app
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN pip install -r requirements.txt
+# Copy only requirements first for better caching
+COPY requirements.txt .
 
+# Install Python dependencies with optimizations
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY . .
+
+# Expose port
+EXPOSE 8080
+
+# Run the application
 CMD ["python3", "app.py"]
