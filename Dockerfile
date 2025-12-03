@@ -14,7 +14,7 @@ COPY setup.py .
 
 # Install Python dependencies with optimizations
 # Use CPU-only PyTorch to reduce image size significantly
-RUN pip install --no-cache-dir torch==2.9.1+cpu --index-url https://download.pytorch.org/whl/cpu && \
+RUN pip install --no-cache-dir torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
