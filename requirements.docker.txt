@@ -1,0 +1,21 @@
+# ============================================
+# Medical Chatbot - Python Dependencies
+# Optimized for smaller Docker image size
+# ============================================
+
+langchain==0.3.26
+flask==3.1.1 
+pypdf==5.6.1 
+python-dotenv==1.1.0
+langchain-pinecone==0.2.8 
+langchain-google-genai>=2.0.8
+langchain-community==0.3.26
+
+# Sentence transformers with CPU-only PyTorch
+# This significantly reduces image size
+sentence-transformers==4.1.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.9.1+cpu
+
+# Local Package (editable install)
+-e .

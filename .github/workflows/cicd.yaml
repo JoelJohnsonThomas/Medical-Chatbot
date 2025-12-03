@@ -24,6 +24,18 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      - name: Create ECR repository if it doesn't exist
+        env:
+          ECR_REPOSITORY: ${{ secrets.ECR_REPO }}
+        run: |
+          aws ecr describe-repositories --repository-names $ECR_REPOSITORY || \
+          aws ecr create-repository --repository-name $ECR_REPOSITORY
+
+      - name: Clean up Docker resources
+        run: |
+          docker system prune -a -f
+          df -h
+
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
