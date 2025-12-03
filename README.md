@@ -83,12 +83,12 @@ This script will:
 python app.py
 ```
 
-The application will start on `http://localhost:5000`
+The application will start on `http://localhost:8080`
 
 ### Access the Chatbot
 Open your web browser and navigate to:
 ```
-http://localhost:5000
+http://localhost:8080
 ```
 
 You can now start asking medical questions!
@@ -163,7 +163,7 @@ Create an Ubuntu EC2 instance to host your application.
 2. **Launch Instance**:
    - Name: `medical-chatbot-server`
    - AMI: **Ubuntu Server 22.04 LTS**
-   - Instance type: `t2.micro` (or larger based on needs)
+   - Instance type: `t2.large` (or larger based on needs)
    - Create or select a key pair for SSH access
    - **Security Group**: Configure inbound rules:
      - SSH (22) - Your IP
