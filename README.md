@@ -13,7 +13,7 @@ An intelligent medical chatbot powered by Google's Gemini AI, LangChain, and Pin
 
 ## 📋 Prerequisites
 
-- Python 3.10 or higher
+- Python 3.10 or higher version
 - Conda (Anaconda or Miniconda)
 - Google API Key (for Gemini AI)
 - Pinecone API Key (for vector database)
